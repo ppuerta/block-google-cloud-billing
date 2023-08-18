@@ -3,9 +3,7 @@ include: "/views/*.view.lkml"
 explore: recommendations_export {
   label: "Recommendations"
   sql_always_where:
-  -- Show only the latest recommendations. Use a grace period of 3 days to avoid data export gaps.
-    _PARTITIONDATE = DATE_SUB(CURRENT_DATE(), INTERVAL 3 DAY)
-    AND ${cloud_entity_type} = 'PROJECT_NUMBER'
+    ${cloud_entity_type} = 'PROJECT_NUMBER'
     AND ${state} = 'ACTIVE';;
 
   # join: recommendations_export__target_resources {

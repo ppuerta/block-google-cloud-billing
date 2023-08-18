@@ -2,15 +2,13 @@ view: recommendations_export {
   sql_table_name: `@{RECOMMENDATION_TABLE}`;;
 
   dimension_group: _partitiondate {
-    hidden: yes
+    hidden: no
     type: time
     timeframes: [
       raw,
       date,
       week,
-      month,
-      quarter,
-      year
+      month
     ]
     convert_tz: no
     datatype: date
