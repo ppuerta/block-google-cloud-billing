@@ -11,10 +11,17 @@ explore: recommendations_export {
   #   sql: LEFT JOIN UNNEST(${recommendations_export.target_resources}) as recommendations_export__target_resources ;;
   #   relationship: one_to_many
   # }
+  
+  join: recommendations_export__associated_insights {
+    view_label: "Recommendations Export: Associated Insights"
+    sql: LEFT JOIN UNNEST(${recommendations_export.associated_insights}) as recommendations_export__associated_insights ;;
+    relationship: one_to_many
+  }
 
-  # join: recommendations_export__associated_insights {
+  # join: insights_export {
   #   view_label: "Recommendations Export: Associated Insights"
-  #   sql: LEFT JOIN UNNEST(${recommendations_export.associated_insights}) as recommendations_export__associated_insights ;;
-  #   relationship: one_to_many
+  #   type: left_outer
+  #   relationship: one_to_one
+  #   sql_on: ${recommendations_export__associated_insights.recommendations_export__associated_insights} = ${insights_export.name} ;;
   # }
 }

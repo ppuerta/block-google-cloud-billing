@@ -308,11 +308,12 @@ view: recommendations_export {
 #   }
 # }
 
-# view: recommendations_export__associated_insights {
-#   dimension: recommendations_export__associated_insights {
-#     type: string
-#     description: "Insights associated with this recommendation. A project insight is represented as
-#     projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[insight_id]"
-#     sql: recommendations_export__associated_insights ;;
-#   }
-# }
+view: recommendations_export__associated_insights {
+  dimension: recommendations_export__associated_insights {
+    hidden: no
+    type: string
+    description: "Insights associated with this recommendation. A project insight is represented as
+    projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/insights/[insight_id]"
+    sql: recommendations_export__associated_insights ;;
+  }
+}

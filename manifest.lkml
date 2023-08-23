@@ -1,5 +1,10 @@
 ################ Constants ################
 
+constant: INSIGHTS_TABLE {
+  value: "instance.recommender.insights_export_v2"
+  export: override_optional
+}
+
 constant: RECOMMENDATION_TABLE {
   value: "instance.recommender.recommendations_export_v2"
   export: override_optional

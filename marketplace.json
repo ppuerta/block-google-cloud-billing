@@ -10,6 +10,7 @@
       "label": "Connection Name",
       "value_constraint": "connection"
     },
+    "INSIGHTS_TABLE": { "label": "Insights Table" },
     "RECOMMENDATION_TABLE": { "label": "Recommendation Table" },
     "BILLING_TABLE": { "label": "Billing Table" },
     "PRICING_TABLE": { "label": "Pricing Table" }
