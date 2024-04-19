@@ -337,6 +337,55 @@ view: gcp_billing_export {
     sql: ${TABLE}.usage_start_time ;;
   }
 
+  dimension: price__effective_price {
+    type: number
+    sql: ${TABLE}.price.effective_price ;;
+    group_label: "Price"
+    group_item_label: "Effective Price"
+  }
+
+  dimension: price__pricing_unit_quantity {
+    type: number
+    sql: ${TABLE}.price.pricing_unit_quantity ;;
+    group_label: "Price"
+    group_item_label: "Pricing Unit Quantity"
+  }
+
+  dimension: price__tier_start_amount {
+    type: number
+    sql: ${TABLE}.price.tier_start_amount ;;
+    group_label: "Price"
+    group_item_label: "Tier Start Amount"
+  }
+
+  dimension: price__unit {
+    type: string
+    sql: ${TABLE}.price.unit ;;
+    group_label: "Price"
+    group_item_label: "Unit"
+  }
+
+  dimension: subscription__instance_id {
+    type: string
+    sql: ${TABLE}.subscription.instance_id ;;
+    group_label: "Subscription"
+    group_item_label: "Instance Id"
+  }
+
+  dimension: resource__global_name {
+    type: string
+    sql: ${TABLE}.resource.global_name ;;
+    group_label: "Resource"
+    group_item_label: "Global Name"
+  }
+
+  dimension: resource__name {
+    type: string
+    sql: ${TABLE}.resource.name ;;
+    group_label: "Resource"
+    group_item_label: "Name"
+  }
+
   measure: count {
     hidden: no
     type: count
