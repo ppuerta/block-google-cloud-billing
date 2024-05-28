@@ -324,6 +324,7 @@ view: gcp_billing_export {
 
   dimension_group: usage_start {
     type: time
+    group_label: "--> Usage Start Date"
     timeframes: [
       raw,
       time,
