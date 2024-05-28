@@ -4,10 +4,10 @@ view: gcp_billing_export {
     partition_keys: ["usage_start_time"]
     # cluster_keys: ["project.id"]
     datagroup_trigger: billing_datagroup
-    increment_key: "export_date"
+    increment_key: "_partitiontime_date"
     increment_offset: 0
     sql: select *, generate_uuid() as pk from `@{BILLING_TABLE}`
-    WHERE {% incrementcondition %} export_time {% endincrementcondition %};;
+    WHERE {% incrementcondition %} pt {% endincrementcondition %};;
   }
 
   dimension: pk {
@@ -46,8 +46,8 @@ view: gcp_billing_export {
       year
     ]
     convert_tz: no
-    datatype: date
-    sql: ${TABLE}._PARTITIONTIME ;;
+    datatype: timestamp
+    sql: ${TABLE}.pt ;;
   }
 
 
